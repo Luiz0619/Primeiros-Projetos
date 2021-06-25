@@ -1,0 +1,145 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+<h2> Descubra o antecessor de um Número: </h2>
+<label> Digite um Numero que você queira saber o antecessor:  </label><br>
+<input id="N" type="text" /> <br><br>
+<button  onclick="Antecessor()"> Calcular</button><br><br>
+
+<script>
+function Antecessor(){
+
+    Ant = document.getElementById ("N").value;
+    var Antecessor = parseFloat(Ant) - 1 ;
+
+
+    alert('O Antecessor é: '+ Antecessor+'.');
+
+
+
+   
+}
+
+</script>
+
+<h2> Cálculo da Área de um Retângulo:</h2>
+<label> Digite a medida da base da área do retângulo:  </label><br>
+<input id="Base" type="text" /> <br>
+<label> Digite a medida da altura do retângulo: </label><br>
+<input id="Altura" type="text" /> <br><br>
+<button  onclick="Área()"> Calcular </button><br><br>
+
+<script>
+function Área(){
+    Base = document.getElementById("Base").value ;
+    Altura = document.getElementById("Altura").value ;
+    var Área = parseFloat(Base)  *  parseFloat(Altura);
+
+    alert('A área do retângulo é: ' + Área+'.');
+} 
+</script>
+
+
+
+<h2> Total de Eleitores do Município: </h2>
+<label> Digite o total de eleitores: </label><br>
+<input id="Total" type="text" /> <br>
+<label> Digite o número de votos Nulos: </label> <br>
+<input id="Nulo"  type="text" /> <br>
+<label> Digite o número de votos Brancos: </label> <br>
+<input id="Branco" type="text" /> <br>
+<label> Digite o número de votos válidos: </label> <br>
+<input id="Válido" type="text" /> <br><br>
+<button onclick="Porcentagem()">Porcentagem de Votos</button> <br><br>
+
+
+
+<script>
+ function Porcentagem(){
+    Total = document.getElementById("Total").value;
+    Nulo = document.getElementById("Nulo").value;
+    Branco = document.getElementById("Branco").value;
+    Válido = document.getElementById("Válido").value;
+
+    TotalV = parseInt(Nulo) + parseInt(Branco) + parseInt(Válido);
+    if(Total >=TotalV){
+    PNulo = (parseFloat(Nulo) * 100 / parseFloat(Total)).toFixed(0);
+    PBranco = (parseFloat(Branco) * 100 / parseFloat(Total)).toFixed(0);
+    Pválido =(parseFloat(Válido) * 100 / parseFloat(Total)).toFixed(0);
+
+    alert('A porcentagem de Votos Nulos é: '+ PNulo + "%;" +
+    'A porcentagem de Votos Brancos é: ' + PBranco + "%;" +
+    'A porcentagem de Votos Válidos é: ' + Pválido + "%."
+    );
+    }
+    else{
+        alert('A quantidade de votos nulos/válidos é maior do que a quantidade de votos.')
+    }
+ }
+</script>
+
+<h2> Reajuste de Salário:</h2>
+<label> Digite o seu salário atual:</label> <br>
+<input id="Salário" type="text" /> <br>
+<label> Digite a porcentagem de reajuste:</label><br>
+<input id="Reajuste" type="text" /><br><br>
+<button onclick="SalárioFinal()"> Reajuste </button> <br><br>
+
+<script>
+function SalárioFinal(){
+Salário = document.getElementById("Salário").value;
+Reajuste = document.getElementById("Reajuste").value;
+Sf = parseFloat(Salário) * parseFloat(1+'.'+(Reajuste));
+
+alert('O Salario após o reajuste é: R$'+Sf.toFixed(2) + '.');
+
+}
+</script>
+<h2>Custo de um carro novo:</h2>
+<label>Digite o preço do custo de fábrica do carro:</label> <br>
+<input id="Custo" type="text" /> <br><br>
+<button onclick="CustoFinal()"> Calcular </button><br><br>
+
+<script>
+function CustoFinal(){
+    Custo = document.getElementById("Custo").value;
+    Distribuidor =parseFloat(Custo) * 0.28 ;
+    Imposto =parseFloat(Custo) * 0.45 ;
+    Cf =parseFloat(Custo) + parseFloat(Distribuidor) + parseFloat(Imposto);
+alert('O Custo Final do carro é: '+Cf+'.');
+}
+</script>
+
+<h2>Calculo do salário de um Vendedor</h2>
+<label>Digite o valor do seu salário fixo:</label><br>
+<input id="sal" type="text" /> <br>
+<label>Digite quantos vendas você efetuou:</label><br>
+<input id="VendasTotal" type="text" /> <br>
+<label>Digite o valor da sua comissão fixa:</label><br>
+<input id="Comissão" type="text" /> <br>
+<label>Digite o valor total das vendas efetuadas:</label><br>
+<input id="Vendas" type="text" /> <br><br>
+<button onclick="SalárioVendedor()">Calcular </button>
+
+<script>
+function SalárioVendedor(){
+    sal = document.getElementById("sal").value;
+    VendasTotal = document.getElementById("VendasTotal").value;
+    Comissão = document.getElementById("Comissão").value;
+    ComissãoFinal = VendasTotal * Comissão; 
+    Vendas = document.getElementById("Vendas").value;
+    VendasP = parseFloat(Vendas) * 0.05;
+    Saláriof = parseFloat(sal) + parseFloat (ComissãoFinal) + parseFloat(VendasP);
+
+    alert('O seu salário final é: '+Saláriof+'.');
+}
+</script>
+
+</body>
+
+
+</html>
